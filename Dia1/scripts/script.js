@@ -1,5 +1,6 @@
+// ############# //
 // ### DIA 1 ### //
-
+// ############# //
 console.log ("Hola Mundo!");
 variable1=3.14;
 console.log(variable1)
@@ -38,4 +39,4 @@ while (hola == true){
     hola = false
 }
 
-// Desarrolado por : Nicole Arias - c.c; 1,097,496,027
+// Desarrolado por Nicole Dayana Arias Pinzon, identificada con C.C. 1,097,496,027
