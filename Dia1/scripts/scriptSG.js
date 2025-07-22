@@ -2,37 +2,54 @@
 // ----- Simulador de Gastos -----
 // ===============================
 
+let listaGastos = []
 hola = true
-while (hola == true){
-    console.log (
-    "=============================================" 
-    "Simulador de Gasto Diario"
-    "============================================="
-    "Seleccione una opción:
-    "1. Registrar nuevo gasto
-    "2. Consultar gasto
-    "3. Actualizar gasto
-    "4. Eliminar Gasto
-    "5. Listar gastos
-    "6. Calcular total de gastos
-    "7. Generar reporte de gastos
-    "8. Salir
-    "=============================================");
+while (hola == true) {
+    let opcion = prompt(`
+    =========================================== 
+            Simulador de Gasto Diario
+    ===========================================
+    Seleccione una opción:
+    1. Registrar nuevo gasto
+    2. Consultar gasto
+    3. Actualizar gasto
+    4. Eliminar Gasto
+    5. Listar gastos
+    6. Calcular total de gastos
+    7. Generar reporte de gastos
+    8. Salir
+    ===========================================
     
-    opcion = prompt(Ingresa tu opcion deseada: )
-    if (opcion == 1){
-        console.log ("
-        ============================================="
-        "Registrar Nuevo Gasto"
-        "============================================="
-        "Ingrese la información del gasto:"
+    Ingresa tu opción deseada`);
 
-        "- Monto del gasto:"
-        "- Categoría (ej. comida, transporte, entretenimiento, otros):"
-        "- Descripción (opcional):"
+    if (opcion == 1) {
+        alert(`
+        =====================================
+                Registrar Nuevo Gasto
+        =====================================
+        
+        Ingrese la información del gasto:`);
 
-        "Ingrese 'S' para guardar o 'C' para cancelar."
-        "=============================================");
-    }else { hola == false}
+        let registroGasto = prompt(`
+        - Monto del gasto:
+        - Categoría (ej. comida, transporte, entretenimiento, otros):
+        - Descripción (opcional): `);
+
+        let confirmación = prompt(`
+            Ingrese 'S' para guardar o 'C' para cancelar.
+            =============================================`);
     
+    } else { hola == false }
+
+    if (opcion == 2) {
+
+    }else { }
+
+    if (opcion == 3) {
+
+    }else { }
+
+    if (opcion == 4) {
+
+    }else { }
 }
