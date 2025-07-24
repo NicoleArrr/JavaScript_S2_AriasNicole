@@ -1,4 +1,5 @@
 // Quiz relámpago
+
 // Diccionarios dentro de listas
 let hamb = [
     {
@@ -78,21 +79,45 @@ let orden = [];
 // Inicia el pedido del usuario
 pedido = true;
 while (pedido == true) {
-    let opcion = prompt(`
-    Bienvenido! Escribe la opcion que deseas
-    1. Añadir un ingrediente
-    2. Mostrar ingredientes
-    3. Actualizar un ingrediente
-    4. Eliminar un ingrediente
-    `);
-
-    if (opcion === '1') {
-        
+    let opcion = parseInt(prompt(`
+        Bienvenido al menú principal! Escribe la menu que deseas consultar
+        1. Menu de ingredientes
+        2. Menu por categorías
+        3. Menu de hamburguesas
+        4. Chefs disponibles
+        `));
+    if (opcion == 1) {
+        let opcion = parseInt(prompt(`
+        Bienvenido! Escribe la opcion numérica deseada
+        1. Añadir un nuevo ingrediente
+        2. Mostrar ingredientes
+        3. Actualizar un ingrediente
+        4. Eliminar un ingrediente`))
+        }
+    else if (opcion == 2) {
+        let opcion = parseInt(prompt(`
+            Escribe la opcion numérica deseada
+            1. Añadir una nueva categoria
+            2. Mostrar categorias
+            3. Actualizar categorias
+            4. Eliminar una categoria`));
     }
-};
-if (opcion === 2) {
-    alert(orden)
-}
-if (opcion === 3) { }
-if (opcion === 4) { }
+    else if (opcion == 3) {
+        let opcion = parseInt (prompt(`
+            Escribe la opcion numérica deseada
+            1. Añadir una nueva hamburguesa
+            2. Mostrar hamburguesas
+            3. Actulizar hamburguesa
+            4. Eliminar una hamburguesa`))
+    }
+    else if (opcion === 4) { 
+        let opcion = parseInt (prompt(`
+            Escribe la opcion numérica deseada
+            1. Añadir nuevo chef
+            2. Mostrar chefs
+            3. Actualizar chefs
+            4. Eliminar un chef`))
+    } else {
+        let confirmacion = prompt (`Deseas continuar en el programa: (S/N)`)
+    }
 }
