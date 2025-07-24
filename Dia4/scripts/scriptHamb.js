@@ -1,5 +1,5 @@
 // Quiz relámpago
-
+// Diccionarios dentro de listas
 let hamb = [
     {
         "nombre": "Clásica",
@@ -22,33 +22,77 @@ let hamb = [
         "precio": 12,
         "chef": "ChefC"
     }
-]
+];
+let ingredientes = [
+    {
+        "nombre": "Pan",
+        "descripcion": "Pan de hamburguesa clásico",
+        "precio": 2.5,
+        "stock": 500
+    },
+    {
+        "nombre": "Carne de res",
+        "descripcion": "Carne de res jugosa y sabrosa",
+        "precio": 8,
+        "stock": 300
+    },
+    {
+        "nombre": "Queso cheddar",
+        "descripcion": "Queso cheddar derretido",
+        "precio": 1.5,
+        "stock": 200
+    }
+];
+let categorias = [
+    {
+        "nombre": "Clásica",
+        "descripcion": "Hamburguesas clásicas y sabrosas"
+    },
+    {
+        "nombre": "Vegetariana",
+        "descripcion": "Hamburguesas sin carne, perfectas para vegetarianos"
+    },
+    {
+        "nombre": "Gourmet",
+        "descripcion": "Hamburguesas gourmet con ingredientes premium"
+    }
+];
+let chefs = [
+    {
+        "nombre": "ChefA",
+        "especialidad": "Carnes"
+    },
+    {
+        "nombre": "ChefB",
+        "especialidad": "Cocina Vegetariana"
+    },
+    {
+        "nombre": "ChefC",
+        "especialidad": "Gourmet"
+    }
+];
 
-let orden = []
+// lista principal del usuario
+let orden = [];
 
-pedido = true
-while ( pedido == true){
-    let opcion = prompt (`
+// Inicia el pedido del usuario
+pedido = true;
+while (pedido == true) {
+    let opcion = prompt(`
     Bienvenido! Escribe la opcion que deseas
-    1. Hacer un pedido
-    2. Mostrar mi pedido
-    3. Personalizar un producto
-    4. Eliminar
+    1. Añadir un ingrediente
+    2. Mostrar ingredientes
+    3. Actualizar un ingrediente
+    4. Eliminar un ingrediente
     `);
 
-    if (opcion === 1){
-        let pedidoHamb = prompt ('¿Que hamburguesa desea ordenar?');
-        if (pedidoHamb == 'Clásica'){
-            for (let i = 0; i < hamb.length;) {
-                const copyDic = hamb[0]();
-                copyDic.push [orden]
-            }
-        }
-        }
-    };
-    if (opcion === 2){
-        alert (orden)
+    if (opcion === '1') {
+        
     }
-    if (opcion === 3){}
-    if (opcion === 4){}
+};
+if (opcion === 2) {
+    alert(orden)
+}
+if (opcion === 3) { }
+if (opcion === 4) { }
 }
