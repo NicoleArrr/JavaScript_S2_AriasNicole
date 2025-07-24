@@ -100,10 +100,31 @@ while (pedido == true) {
             4. Eliminar un ingrediente
             5. Salir`))
             if (opcionIngrediente == 1) {
-                alert("..fsvd.")
+                let nombre = prompt("Ingrese el nombre del nuevo ingrediente");
+                let descripcion = prompt("Ingrese la descripcion del ingrediente");
+                let precio = prompt("Ingrese el Precio del Ingrediente");
+                let stock = prompt("Ingrese la cantidad de stock que cuenta el Ingrediente");
+                let confirmacion = prompt("Seguro que quieres agregar este Ingrediente? \n1. Si \n2. No\n");
+                if (confirmacion == "1") {
+                    ingredientes.push({
+                        "nombre": nombre,
+                        "descripcion": descripcion,
+                        "precio": precio,
+                        "stock": stock,
+                    });
+                    alert("El ingrediente fue guardado con exito")
+                } else if (confirmacion == "2") {
+                    alert("Ingrediente no agregado")
+                } else {
+                    alert("Opcion incorrecta,Ingrediente no agregado \nRegresando al menu principal")
+                }
             } else if (opcionIngrediente == 5) {
                 alert("Regresando al menu principal");
                 menus = false;
+            } else if (opcionIngrediente == 2) {
+                let eliminar = prompt("Ingrese el numero del Ingrediente que deseas eliminar");
+                ingredientes.splice(eliminar - 1, 1);
+                alert("Ingrediente Eliminado");
             }
         }
     } else if (opcion == 2) {
@@ -118,7 +139,7 @@ while (pedido == true) {
                 4. Eliminar una categoria
                 5. Salir`))
             if (opcionCategoria == 1) {
-                alert("..fsvd.")
+                alert("")
             } else if (opcionCategoria == 5) {
                 alert("Regresando al menu principal");
                 menus = false;
@@ -130,13 +151,13 @@ while (pedido == true) {
             let opcionHamb = parseInt(prompt(
                 `Escribe la opcion numérica deseada
 
-            1. Añadir una nueva hamburguesa
-            2. Mostrar hamburguesas
-            3. Actulizar hamburguesa
-            4. Eliminar una hamburguesa
-            5. Salir`))
+                1. Añadir una nueva hamburguesa
+                2. Mostrar hamburguesas
+                3. Actulizar hamburguesa
+                4. Eliminar una hamburguesa
+                5. Salir`))
             if (opcionHamb == 1) {
-                alert("..fsvd.")
+                alert("")
             } else if (opcionHamb == 5) {
                 alert("Regresando al menu principal");
                 menus = false;
@@ -154,7 +175,7 @@ while (pedido == true) {
             4. Eliminar un chef
             5. Salir`))
             if (opcionChef == 1) {
-                alert("..fsvd.")
+                alert("")
             } else if (opcionChef == 5) {
                 alert("Regresando al menu principal");
                 menus = false;
@@ -165,9 +186,9 @@ while (pedido == true) {
         if (confirmacion == "S") {
             alert("Sigues en el programa");
             pedido = false;
-        } else if(confirmacion == "N") {
+        } else if (confirmacion == "N") {
             alert("Regresando al menu principal");
-        }else {
+        } else {
             alert("opcion no valida")
         }
     } else {
