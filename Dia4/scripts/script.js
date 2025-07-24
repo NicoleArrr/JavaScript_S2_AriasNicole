@@ -100,11 +100,11 @@ while (pedido == true) {
             4. Eliminar un ingrediente
             5. Salir`))
             if (opcionIngrediente == 1) {
-                let nombre = prompt("Ingrese el nombre del nuevo ingrediente");
-                let descripcion = prompt("Ingrese la descripcion del ingrediente");
-                let precio = prompt("Ingrese el Precio del Ingrediente");
-                let stock = prompt("Ingrese la cantidad de stock que cuenta el Ingrediente");
-                let confirmacion = prompt("Seguro que quieres agregar este Ingrediente? \n1. Si \n2. No\n");
+                let nombre = prompt("Ingresa el nombre de tu nuevo ingrediente");
+                let descripcion = prompt("Ingresa la descripcion de tu nuevo ingrediente");
+                let precio = prompt("Ingresa el precio de tu nuevo ingrediente");
+                let stock = prompt("Ingrese la cantidad disponible del ingrediente");
+                let confirmacion = prompt("¿Quieres agregar este Ingrediente? \n1. Si \n2. No\n");
                 if (confirmacion == "1") {
                     ingredientes.push({
                         "nombre": nombre,
@@ -112,20 +112,43 @@ while (pedido == true) {
                         "precio": precio,
                         "stock": stock,
                     });
-                    alert("El ingrediente fue guardado con exito")
+                    alert("El ingrediente ha sido añadido")
                 } else if (confirmacion == "2") {
-                    alert("Ingrediente no agregado")
+
+                    alert("")/*let mostrarIngredientes = " ";
+                for (i=0 ; i < hamb.length )*/
                 } else {
-                    alert("Opcion incorrecta,Ingrediente no agregado \nRegresando al menu principal")
+                    alert("Ingrediente no agregado \nRegreso al menu principal")
                 }
-            } else if (opcionIngrediente == 5) {
-                alert("Regresando al menu principal");
-                menus = false;
             } else if (opcionIngrediente == 2) {
+                let enu = ingredientes.length;
+                for (i = 0; i < enu; i++) {
+                    alert(
+                        "Ingrediente N. " + (i + 1) + "\n" +
+                        "Nombre: " + ingredientes[i]["nombre"] + "\n" +
+                        "Descripcion: " + ingredientes[i]["descripcion"] + "\n" +
+                        "Precio: " + ingredientes[i]["precio"] + "\n" +
+                        "Stock: " + ingredientes[i]["stock"]
+                    )
+                }
+            } else if (opcionIngrediente == 3) {
+                let cambios = prompt("Ingrese el numero del ********* que quieras actualizar")
+                let Nnombre = prompt("Ingresa el nombre de tu nuevo ingrediente");
+                let Ndescripcion = prompt("Ingresa la descripcion de tu nuevo ingrediente");
+                let Nprecio = prompt("Ingresa el precio de tu nuevo ingrediente");
+                let Nstock = prompt("Ingrese la cantidad disponible del ingrediente");
+                ingredientes[cambios - 1]["nombre"] = Nnombre;
+                ingredientes[cambios - 1]["descripcion"] = Ndescripcion;
+                ingredientes[cambios - 1]["precio"] = Nprecio;
+                ingredientes[cambios - 1]["stock"] = Nstock;
+            } else if (opcionIngrediente == 4) {
                 let eliminar = prompt("Ingrese el numero del Ingrediente que deseas eliminar");
                 ingredientes.splice(eliminar - 1, 1);
-                alert("Ingrediente Eliminado");
-            }
+                alert("El ingrediente ha sido eliminado");
+            } else if (opcionIngrediente == 5) {
+                alert("Regreso al menu principal");
+                menus = false;
+            } 
         }
     } else if (opcion == 2) {
         let menus = true;
