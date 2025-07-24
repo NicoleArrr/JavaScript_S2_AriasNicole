@@ -79,6 +79,8 @@ let orden = [];
 // Inicia el pedido del usuario
 pedido = true;
 while (pedido == true) {
+
+    // Se desplega el menú principal
     let opcion = parseInt(prompt(
         `Bienvenido al menú principal! Escribe la menu que deseas consultar
 
@@ -88,43 +90,87 @@ while (pedido == true) {
         4. Chefs disponibles
         5. Salir
         `));
+
     if (opcion == 1) {
+
+        // Despliegue de menu individuales
         let menus = true
         while (menus) {
+
+            // Primer menú : Ingredientes
             let opcionIngrediente = parseInt(prompt(
                 `Bienvenido! Escribe la opcion numérica deseada
             
-            1. Añadir un nuevo ingrediente
-            2. Mostrar ingredientes
-            3. Actualizar un ingrediente
-            4. Eliminar un ingrediente
-            5. Salir`))
+                1. Añadir un nuevo ingrediente
+                2. Mostrar ingredientes
+                3. Actualizar un ingrediente
+                4. Eliminar un ingrediente
+                5. Salir`))
             if (opcionIngrediente == 1) {
-                let nombre = prompt("Ingrese el nombre del nuevo ingrediente");
-                let descripcion = prompt("Ingrese la descripcion del ingrediente");
-                let precio = prompt("Ingrese el Precio del Ingrediente");
-                let stock = prompt("Ingrese la cantidad de stock que cuenta el Ingrediente");
-                let confirmacion = prompt("Seguro que quieres agregar este Ingrediente? \n1. Si \n2. No\n");
+                // Entrada de datos del usuario
+                let nombre = prompt("Ingresa el nombre de tu nuevo ingrediente");
+                let descripcion = prompt("Ingresa la descripcion de tu nuevo ingrediente");
+                let precio = prompt("Ingresa el precio de tu nuevo ingrediente");
+                let stock = prompt("Ingrese la cantidad disponible del ingrediente");
+                let confirmacion = prompt("¿Quieres agregar este Ingrediente? Escribe \n(1)Si       (2)No\n");
+                // Se obtienen los datos del usuario
+
+                // Condición de validación
                 if (confirmacion == "1") {
+
+                    // Posteriormente, se crea el diccionario para ser inyectado a la lista. Será un nuevo elemento
                     ingredientes.push({
                         "nombre": nombre,
                         "descripcion": descripcion,
                         "precio": precio,
                         "stock": stock,
                     });
-                    alert("El ingrediente fue guardado con exito")
-                } else if (confirmacion == "2") {
-                    alert("Ingrediente no agregado")
+
+                    //Salida hacia el usuario
+                    alert("El ingrediente ha sido añadido")
                 } else {
-                    alert("Opcion incorrecta,Ingrediente no agregado \nRegresando al menu principal")
+                    alert("Regreso al menu principal")
                 }
-            } else if (opcionIngrediente == 5) {
-                alert("Regresando al menu principal");
-                menus = false;
             } else if (opcionIngrediente == 2) {
+
+                // Salida de la información presente en los diccionarios de la lista (propiedades del objeto)
+                // Se accede a los datos respetando el orden jerárquico, desde la periferia hacia el interior (general a particular)
+                for (i = 0; i < ingredientes.length; i++) {
+                    alert(
+                        "Ingrediente N. " + (i + 1) + "\n" +
+                        "Nombre: " + ingredientes[i]["nombre"] + "\n" +
+                        "Descripcion: " + ingredientes[i]["descripcion"] + "\n" +
+                        "Precio: " + ingredientes[i]["precio"] + "\n" +
+                        "Stock: " + ingredientes[i]["stock"]
+                    )
+                }
+            } else if (opcionIngrediente == 3) {
+
+                // Se identifica el ingrediente por actualizar
+                let cambio = prompt("Ingresa el numero del ingrediente que deseas modificar")
+
+                // Entrada de nuevos datos del usuario
+                let nuevoNombre = prompt("Ingresa el nombre de tu nuevo ingrediente");
+                let nuevaDescripcion = prompt("Ingresa la descripcion de tu nuevo ingrediente");
+                let nuevoPrecio = prompt("Ingresa el precio de tu nuevo ingrediente");
+                let nuevoStock = prompt("Ingrese la cantidad disponible del nuevo ingrediente");
+
+                //
+                ingredientes[cambio - 1]["nombre"] = nuevoNombre;
+                ingredientes[cambio - 1]["descripcion"] = nuevaDescripcion;
+                ingredientes[cambio - 1]["precio"] = nuevoPrecio;
+                ingredientes[cambio - 1]["stock"] = nuevoStock;
+
+            } else if (opcionIngrediente == 4) {
+
+                // Se identifica el ingrediente por eliminar
                 let eliminar = prompt("Ingrese el numero del Ingrediente que deseas eliminar");
                 ingredientes.splice(eliminar - 1, 1);
-                alert("Ingrediente Eliminado");
+                alert("El ingrediente ha sido eliminado");
+
+            } else if (opcionIngrediente == 5) {
+                alert("Regreso al menu principal");
+                menus = false;
             }
         }
     } else if (opcion == 2) {
