@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+}
+
+body {
+    background: linear-gradient(rgb(101, 201, 255), white);
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
