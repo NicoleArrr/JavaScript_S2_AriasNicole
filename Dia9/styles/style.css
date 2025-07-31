@@ -7,7 +7,12 @@
 
 body {
     background: linear-gradient(rgb(101, 201, 255), white);
+    background-repeat: no-repeat;
     justify-content: center;
     align-content: center;
     text-align: center;
+}
+
+.pantalla {
+    display: flex;
 }
