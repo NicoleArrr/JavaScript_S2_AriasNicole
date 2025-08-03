@@ -1,12 +1,11 @@
 // PokéAPI
 
 function buscarPokemon() {
-    document.getElementById("resultados").innerHTML=``;
-    //const nombreUsar= prompt("Ingresar el nombre del personaje a buscar:");
-    const nombreUsar = document.getElementById("nombreInput").value.trim();
-    console.log(nombreUsar);
+    document.getElementById("pantalla").innerHTML=``;
+    const busqPoke = document.getElementById("nombreInput").value.trim();
+    console.log(busqPoke);
     const xhr = new XMLHttpRequest();//La importación del XML
-    const url = `https://pokeapi.co/api/v2/pokedex/{id or name}/${nombreUsar}`;//Acento Inverso ```
+    const url = `https://pokeapi.co/api/v2/pokemon/${busqPoke}`;
     console.log(url);
     xhr.open("GET", url, true);
 
@@ -17,31 +16,23 @@ function buscarPokemon() {
         }
         else if (xhr.readyState === 4 && xhr.status === 200) {
             try {
-                /*        <div class="card">
-            <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" alt="">
-            <h3>Morty</h3>
-            <p><strong>Estado:</strong>Vivo</p>
-            <p><strong>Especie:</strong>Humana</p>
-        </div> */
-                const daticos = JSON.parse(xhr.responseText);
-                if (daticos.results && daticos.results.length > 0) {
-                    for (let i = 0; i < daticos.results.length; i++) {
-                        let division = document.getElementById("resultados");
+                const datos = JSON.parse(xhr.responseText);
+                if (datos.results && datos.results.length > 0) {
+                    for (let i = 0; i < datos.results.length; i++) {
+                        let division = document.getElementById("pantalla");
                         division.innerHTML += `
-                        <div class="card">
-            <img src="${daticos["results"][i]["image"]}" alt="">
-            <h3>${daticos["results"][i]["name"]}</h3>
-            <p><strong>Status:</strong>${daticos["results"][i]["status"]}</p>
-            <p><strong>Specie:</strong>${daticos["results"][i]["species"]}</p>
-        </div>
+                            <img src="${datos["sprites"][i]["showdown"]["front_default"]}" alt="">
+                            <h3>${datos["results"][i]["name"]}</h3>
+                            <p><strong>Status:</strong>${datos["results"][i]["status"]}</p>
+                            <p><strong>Specie:</strong>${datos["results"][i]["species"]}</p>
                         `
-                        console.log(daticos["results"][i]["name"]);
+                        console.log(datos[i]["id"]);
                     }
                 }
 
             }
             catch (err) {
-                console.log(err.message); //Si algo malo pasa simplemente imprima el error
+                console.log(err.message);
             }
         }
     };
