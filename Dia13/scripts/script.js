@@ -22,11 +22,16 @@ function buscarSuperhero() {
             try {
                 const datos = JSON.parse(xhr.responseText);
                 console.log(datos);
-                personaje.innerHTML = `
-                <h2>${datos["results"][0]["name"]}</h2>
-                <p>${datos["results"][0]["biography"]["full-name"]}</p>
-                <p>${datos["results"][0]['appearance']['gender']}</p>
-                `
+                if (datos.results && datos.results.length > 0) {
+                    for (let i=0; i < datos.results.length; i++){
+                        personaje.innerHTML = `
+                        <img src="${datos["results"][0]["image"]["url"]}" alt="">
+                        <h2>${datos["results"][0]["name"]}</h2>
+                        <p><strong>Full name :</strong> ${datos["results"][0]["biography"]["full-name"]}</p>
+                        <p><strong>Gender :</strong> ${datos["results"][0]['appearance']['gender']}</p>
+                        `
+                    }
+                }
                 console.log(datos["results"][0]);
             }
             catch (err) {
