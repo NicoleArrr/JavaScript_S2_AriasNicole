@@ -1,0 +1,13 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to right,rgb(79, 85, 93),rgb(39, 51, 63));
+}
+
+/*Cuando necesite modificar como saturaciones, opacidades, transparencias se recomieenda rbg 0,0,0,0 modificando*/
